@@ -1,12 +1,13 @@
 FROM ubuntu:16.04
 
+MAINTAINER xiangzaixiansheng@163.com  nodejs_nvm
 ENV TZ=Asia/Shanghai
-ENV NODE_VERSION=v12.16.1
+ENV NODE_VERSION=v12.22.11
 ENV NVM_DIR=/root/.nvm
-ENV NPM_REGISTRY=https://registry.npm.taobao.org
+ENV NPM_REGISTRY=https://registry.npmmirror.com
 ENV PATH="/root/.nvm/versions/node/${NODE_VERSION}/bin/:${PATH}"
-ENV NPM_REGISTRY=https://registry.npm.taobao.org
-ENV NVM_NODEJS_ORG_MIRROR=http://npm.taobao.org/mirrors/node
+ENV NPM_REGISTRY=https://registry.npmmirror.com
+ENV NVM_NODEJS_ORG_MIRROR=https://npmmirror.com/mirrors/node/
 
 COPY ./etc/apt/sources.list /etc/apt/sources.list
 COPY ./etc/nvm/nvm-node.tar.gz /root/nvm-node.tar.gz
